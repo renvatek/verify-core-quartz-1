@@ -29,6 +29,21 @@ chmod +x main.sh
 ./main.sh
 ```
 
+Uninstall
+---------
+To remove every trace, execute this:
+```
+cd <repository-parent>
+rm -rf <repository>
+```
+* Replace `<repository-parent>` with the directory inside which you have cloned this repository.
+* Replace `<repository>` with the name you have cloned this repository as.
+-
+Internal clean up is already done by the scripts. Testing to a great extent has been done to ensure
+that the automatic clean up works, but sometimes leakages happen. To be absolutely sure, check the
+versions of your system's binaries which were used as dependencies and make sure the `bash` profile
+of your shell is not changed.
+
 Author
 ------
 Sushant Mondal <sushant@renvatek.com>
