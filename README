@@ -29,16 +29,18 @@ sudo dnf install -y gawk vim-common
 
 Operating systems which were used to run this repository successfully:
 
-+---------------------------------------------+
-| NAME          | VERSION            | ARCH   |
-|---------------|--------------------|--------|
-| AlmaLinux     | 9.8 (Olive Jaguar) | x86_64 |
-| openSUSE Leap | 16.0               | x86_64 |
-+---------------------------------------------+
++----------------------------------------------------------+
+| NAME          | VERSION                         | ARCH   |
+|---------------|---------------------------------|--------|
+| AlmaLinux     | 9.8 (Olive Jaguar)              | x86_64 |
+| Fedora Linux  | 44 (KDE Plasma Desktop Edition) | x86_64 |
+| openSUSE Leap | 16.0                            | x86_64 |
++----------------------------------------------------------+
 
 Notes:
 - `cat /etc/os-release` @ {NAME,VERSION}
 - `lscpu` @ {ARCH}
+- Arrange all the rows in alphabetical order @ {NAME}.
 - Testing this core on any other OS than the above listed ones, and then reporting back to us with
   the results to expand the above table would be very appreciated.
 
