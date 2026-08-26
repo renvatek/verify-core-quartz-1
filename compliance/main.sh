@@ -27,9 +27,23 @@ export PATH="$COMPLIANCE_DIR/bin:$PATH"
 
 # Dependencies
 if command -v dnf >/dev/null 2>&1; then
-  sudo dnf install -y gawk vim-common
+  HAVE_GAWK=0; command -v gawk >/dev/null 2>&1 && HAVE_GAWK=1
+  HAVE_XXD=0; command -v xxd >/dev/null 2>&1 && HAVE_XXD=1
+  if [[ "$HAVE_GAWK" -eq 1 && "$HAVE_XXD" -eq 1 ]]; then
+    echo "skip-install: 'gawk' and 'xxd' are already available."
+  else
+    echo "require-sudo: Installing missing dependencies (one or more of: 'gawk', 'xxd') via 'dnf'; you will be asked for your 'sudo' password."
+    sudo dnf install -y gawk vim-common
+  fi
 elif command -v zypper >/dev/null 2>&1; then
-  sudo zypper install -y gawk vim xxd
+  HAVE_GAWK=0; command -v gawk >/dev/null 2>&1 && HAVE_GAWK=1
+  HAVE_XXD=0; command -v xxd >/dev/null 2>&1 && HAVE_XXD=1
+  if [[ "$HAVE_GAWK" -eq 1 && "$HAVE_XXD" -eq 1 ]]; then
+    echo "skip-install: 'gawk' and 'xxd' are already available."
+  else
+    echo "require-sudo: Installing missing dependencies (one or more of: 'gawk', 'vim', 'xxd') via 'zypper'; you will be asked for your 'sudo' password."
+    sudo zypper install -y gawk vim xxd
+  fi
 else
   echo "unsupported-package-manager: Please install 'gawk' and 'xxd' manually." >&2
   exit 1
