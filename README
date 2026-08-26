@@ -62,7 +62,7 @@ Uninstall
 To remove every trace of this repository, execute this:
 
 ```bash
-rm -rf /tmp/renvatek/renvatek-verify-core-quartz-1
+rm -rf /tmp/renvatek
 ```
 
 Internal clean up is already done by the scripts. We have tested the automatic clean-up extensively,
