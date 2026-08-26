@@ -12,11 +12,11 @@ example, Python.
 Information
 -----------
 
-- Test framework: `riscv/riscv-arch-test` (`act4`) @ `5590e5c64a2ae83a0e4e29a20c3043676c02668f`
+* Test framework: `riscv/riscv-arch-test` (`act4`) @ `5590e5c64a2ae83a0e4e29a20c3043676c02668f`
   Link: https://github.com/riscv/riscv-arch-test/tree/5590e5c64a2ae83a0e4e29a20c3043676c02668f
-- There are exactly 39 tests in the above commit. You can verify against the number of ELF files
+* There are exactly 39 tests in the above commit. You can verify against the number of ELF files
   that are produced by the `upstream` against the pre-compiled files inside `compliance/tests`.
-- `compliance/bin/Vtop` is the Verilator-generated "simulation" of the core. It is NOT the core
+* `compliance/bin/Vtop` is the Verilator-generated "simulation" of the core. It is NOT the core
   itself.
 
 Environment
@@ -33,10 +33,10 @@ Operating systems which were used to run this repository successfully:
 +----------------------------------------------------------+
 
 Notes:
-- `cat /etc/os-release` @ {NAME,VERSION}.
-- `lscpu` @ {ARCH}.
-- Arrange all the rows in alphabetical order @ {NAME}.
-- Testing this core on any other OS than the above listed ones, and then reporting back to us with
+* `cat /etc/os-release` @ {NAME,VERSION}.
+* `lscpu` @ {ARCH}.
+* Arrange all the rows in alphabetical order @ {NAME}.
+* Testing this core on any other OS than the above listed ones, and then reporting back to us with
   the results to expand the above table would be very appreciated.
 
 Install
