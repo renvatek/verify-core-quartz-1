@@ -26,6 +26,14 @@ trap cleanup EXIT
 export PATH="$COMPLIANCE_DIR/bin:$PATH"
 
 # Dependencies
+if command -v dnf >/dev/null 2>&1; then
+  sudo dnf install -y gawk vim-common
+elif command -v zypper >/dev/null 2>&1; then
+  sudo zypper install -y gawk vim xxd
+else
+  echo "unsupported-package-manager: Please install 'gawk' and 'xxd' manually." >&2
+  exit 1
+fi
 mkdir -p "$TMP_DIR"
 cd "$TMP_DIR"
 export UV_UNMANAGED_INSTALL="$TMP_DIR/uv"

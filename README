@@ -43,11 +43,6 @@ Install
 -------
 
 ```bash
-
-# Install the Linux dependencies (replace `dnf` with your distribution's package manager).
-# `xxd` is found with `vim-common` using the DNF package manager for AlmaLinux 9.8 (x86_64).
-sudo dnf install -y gawk vim-common
-
 mkdir -p /tmp/renvatek
 cd /tmp/renvatek
 git clone https://github.com/renvatek/verify-core-quartz-1.git renvatek-verify-core-quartz-1
