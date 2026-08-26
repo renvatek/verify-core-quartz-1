@@ -19,6 +19,10 @@ The RISC-V Architectural Certification Tests (ACTs) are a set of assembly langua
 For more information, visit: https://github.com/riscv/riscv-arch-test
 Exact SHA with which the RTL is tested: https://github.com/riscv/riscv-arch-test/commit/5590e5c64a2ae83a0e4e29a20c3043676c02668f
 
+Tests passed
+============
+39/39
+
 Author
 ======
 RTL verification by: Sushant Mondal <sushant@renvatek.com>
