@@ -19,14 +19,19 @@ Environment
 -----------
 
 Install the Linux dependencies (replace `dnf` with your distribution's package manager):
+
 ```
-sudo dnf install -y gawk xxd
+
+# `xxd` is found with `vim-common` using the DNF package manager for AlmaLinux 9.8 (x86_64).
+sudo dnf install -y gawk vim-common
+
 ```
 
 Run
 ---
 
 After cloning this repository, start the verification script using these commands:
+
 ```
 cd compliance
 chmod +x main.sh
@@ -37,6 +42,7 @@ Uninstall
 ---------
 
 To remove every trace, execute this:
+
 ```
 
 # Replace `<repository-parent>` with the directory inside which you have cloned this repository.
