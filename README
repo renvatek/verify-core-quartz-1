@@ -12,20 +12,15 @@ example, Python.
 Information
 -----------
 
-`compliance/bin/Vtop` is the Verilator-generated "simulation" of the core. It is NOT the the core
-itself.
+- Test framework: `riscv/riscv-arch-test` (`act4`) @ `5590e5c64a2ae83a0e4e29a20c3043676c02668f`
+  Link: https://github.com/riscv/riscv-arch-test/tree/5590e5c64a2ae83a0e4e29a20c3043676c02668f
+- There are exactly 39 tests in the above commit. You can verify against the number of ELF files
+  that are produced by the `upstream` against the pre-compiled files inside `compliance/tests`.
+- `compliance/bin/Vtop` is the Verilator-generated "simulation" of the core. It is NOT the core
+  itself.
 
 Environment
 -----------
-
-Install the Linux dependencies (replace `dnf` with your distribution's package manager):
-
-```
-
-# `xxd` is found with `vim-common` using the DNF package manager for AlmaLinux 9.8 (x86_64).
-sudo dnf install -y gawk vim-common
-
-```
 
 Operating systems which were used to run this repository successfully:
 
@@ -44,13 +39,19 @@ Notes:
 - Testing this core on any other OS than the above listed ones, and then reporting back to us with
   the results to expand the above table would be very appreciated.
 
-Run
----
+Install
+-------
 
-After cloning this repository, start the verification script using these commands:
+```bash
 
-```
-cd compliance
+# Install the Linux dependencies (replace `dnf` with your distribution's package manager).
+# `xxd` is found with `vim-common` using the DNF package manager for AlmaLinux 9.8 (x86_64).
+sudo dnf install -y gawk vim-common
+
+mkdir -p /tmp/renvatek
+cd /tmp/renvatek
+git clone https://github.com/renvatek/verify-core-quartz-1.git renvatek-verify-core-quartz-1
+cd renvatek-verify-core-quartz-1/compliance
 chmod +x main.sh
 ./main.sh
 ```
@@ -58,22 +59,15 @@ chmod +x main.sh
 Uninstall
 ---------
 
-To remove every trace, execute this:
+To remove every trace of this repository, execute this:
 
+```bash
+rm -rf /tmp/renvatek/renvatek-verify-core-quartz-1
 ```
 
-# Replace `<repository-parent>` with the directory inside which you have cloned this repository.
-cd <repository-parent>
-
-# Replace `<repository>` with the name you have cloned this repository as.
-rm -rf <repository>
-
-```
-
-Internal clean up is already done by the scripts. Testing to a great extent has been done to ensure
-that the automatic clean up works, but sometimes leakages happen. To be absolutely sure, check the
-versions of your system's binaries which were used as dependencies and make sure the `bash` profile
-of your shell is not changed.
+Internal clean up is already done by the scripts. We have tested the automatic clean-up extensively,
+but leakage can still occur. To be absolutely sure, check the versions of your system's binaries
+which were used as dependencies and make sure the `bash` profile of your shell is not changed.
 
 Author
 ------
